@@ -1,0 +1,50 @@
+@import '../../scss//color';
+.Consent
+{
+    width: calc(100vw - 60px);
+    .imageContainer
+    {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        height: 233px;
+        border-radius: 24px;
+        margin-top: 30px;
+        background: #D6E0FF;
+        margin-bottom: 60px;
+        
+        
+        img
+        {
+            position: absolute;
+            bottom: -30px;
+            height: 220px;
+            width: auto;
+        }
+    }
+    .message
+    {
+        // text-align: center;
+        .logo
+        {
+            margin: 0 auto;
+            height: 16px;
+        }
+        .header
+        {
+            font-size: 24px;
+            line-height: 32px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #222323;
+        }
+
+        .caption
+        {
+            display: block;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+    }    
+}

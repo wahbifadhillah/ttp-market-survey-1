@@ -1,0 +1,27 @@
+.Dots
+    {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 12px;
+
+        &.highMargin{
+            margin-bottom: 30px;
+        }
+
+        .dot
+        {
+            width: 6px;
+            height: 6px;
+            border-radius: 100%;
+            background: #273077;
+            margin: 0 6px;
+            opacity: .5;
+
+            &.active
+            {
+                width: 18px;
+                border-radius: 6px;
+                opacity: 1;
+            }
+        }
+    }

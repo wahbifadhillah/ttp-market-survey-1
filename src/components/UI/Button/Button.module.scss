@@ -1,0 +1,75 @@
+@import '../../../scss//color';
+
+.btn
+{
+    font-size: 12px;
+    padding: 8px;
+    background: none;
+    border: none;
+    margin-bottom: 30px;
+
+
+    &.previous, &.none
+    {
+        color: #888888;
+        border-radius: 8px;
+        transition: background .25s linear;
+
+        &:active
+        {
+            background: #ccc;
+        }
+    }
+
+    &.shadow
+    {
+        color: #888;
+        border: 1px solid #aaa;
+        border-radius: 8px;
+        transition: background .25s linear;
+
+        &:active
+        {
+            background: #ccc;
+        }
+    }
+
+    &.next, &.primary
+    {
+        color: #ffffff;
+        background: $color1;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        transition: background .25s linear;
+
+        &:active
+        {
+            background: darken($color1, 10%);
+        }
+
+    }
+    
+    &.full{
+        width: 100%;
+    }
+
+    &.modal{
+        margin: 10px 0px;
+    }
+
+    &.lessMargin
+    {
+        margin-bottom: 10px;
+    }
+
+    &.topMargin10
+    {
+        margin: 0;
+        margin-top: 20px;
+    }
+
+    &:focus
+    {
+        outline: none;
+    }
+}

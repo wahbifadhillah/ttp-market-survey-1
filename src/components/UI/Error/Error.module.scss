@@ -1,0 +1,23 @@
+.Error
+    {
+        position: fixed;
+        bottom: 0px;
+        left: 0;
+        display: block;
+        opacity: 0;
+        background: red;
+        font-size: 12px;
+        color: white;
+        width: 100%;
+        padding: 5px 20px;
+        margin-top: 10px;
+        // transition: all .25s bounce;
+        animation: bounce .25s;
+        transition: all .25s linear;
+
+
+        &.invalid
+        {
+            opacity: 1;
+        }
+    }

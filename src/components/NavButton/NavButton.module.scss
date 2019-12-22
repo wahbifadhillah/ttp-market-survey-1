@@ -1,0 +1,12 @@
+.navBtn
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &.bottom{
+        position: absolute;
+        width: calc(100% - 60px);
+        bottom: 0;
+    }
+}

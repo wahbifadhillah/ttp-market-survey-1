@@ -1,0 +1,45 @@
+.Input
+{
+    margin-bottom: 30px;
+    input
+    {
+        background: #ffffff;
+        width: 100%;
+        font-size: 12px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #c5c5c5;
+
+        &::placeholder
+        {
+            color: #888888;
+        }
+        &:focus
+        {
+            outline: none;
+        }
+    }
+    select
+    {
+        color: #888888;
+        background: #ffffff;
+        width: 100%;
+        font-size: 12px;
+        padding: 9px;
+        border-radius: 10px;
+        border: 1px solid #c5c5c5;
+
+        &:focus
+        {
+            outline: none;
+        }
+        option
+        {
+            color: #333;
+            &:focus
+            {
+                outline: none;
+            }
+        }
+    }
+}
