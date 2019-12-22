@@ -11,8 +11,8 @@ const finished = (props) => {
             </div>
             <div className={s.message}>
                 <h2 className={s.header}>Terimakasih, {props.nam}</h2>
-                <p className={s.caption}>Telah mengikuti survey kami, informasi pemenang giveway bisa dicek melalui Instagram @thetimeplanner</p>
-                <p className={s.caption}>Selamat beraktifitas kembali</p>
+                <p className={s.caption}>Telah mengikuti survey kami, informasi pemenang giveway bisa dicek melalui Instagram <a href="https://www.instagram.com/thetimeplanner/">@thetimeplanner</a></p>
+                <p className={s.caption}>Selamat beraktifitas kembali!</p>
             </div>
         </div>
     );

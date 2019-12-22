@@ -1,129 +1,135 @@
-.Questionnaire
-{
-    .position
+.Questionnaire{
+    display: none;
+}
+@media (max-width: 500px){
+    .Questionnaire
     {
-        position: absolute;
-        width: calc(100% - 60px);
-        top: 0;
-        font-size: 12px;
-        color: #666;
-        text-align: center;
-        margin: 30px 0;
-    }
-
-    .imgmodal
-    {
-        width: 100%;
-    }
-    .Card
-    {
-        width: 100%;
-        height: auto;
-        max-height: 65vh;
-        margin-bottom: 30px;
-        padding: 20px 0;
-        background: #fff;
-        border: 0.5px solid rgba(0, 0, 0, 0.05);
-        box-sizing: border-box;
-        box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
-        border-radius: 12px;
-        
-        .question{
-            padding: 0 20px;
-            font-size: 14px;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        
-        .answers
+        display: block;
+        .position
         {
-            padding: 0 20px;
-            height: auto;
-            max-height: 45vh;
-            overflow-y: scroll;
+            position: absolute;
+            width: calc(100% - 60px);
+            top: 0;
             font-size: 12px;
-            color: #555;
-            .formControl
+            color: #666;
+            text-align: center;
+            margin: 30px 0;
+        }
+    
+        .imgmodal
+        {
+            width: 100%;
+        }
+        .Card
+        {
+            width: 100%;
+            height: auto;
+            max-height: 65vh;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            background: #fff;
+            border: 0.5px solid rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            
+            .question{
+                padding: 0 20px;
+                font-size: 14px;
+                font-weight: 700;
+                color: #333;
+                margin-bottom: 20px;
+            }
+            
+            .answers
             {
-                input[type=radio]
+                padding: 0 20px;
+                height: auto;
+                max-height: 45vh;
+                overflow-y: scroll;
+                font-size: 12px;
+                color: #555;
+                .formControl
                 {
-                    &:not(old)
+                    input[type=radio]
+                    {
+                        &:not(old)
+                        {
+                            color: #555;
+                            margin: 0;
+                            padding: 0;
+                            width: 2em;
+                            font-size: 12px;
+                            opacity: 0;
+                            display: none;
+                        }
+        
+                        &:not(old) + label
+                        {
+                            display: block;
+                            margin: 5px 0;
+                            line-height: 14px;
+                            float: left;
+                            clear: left;
+                        }
+        
+                        // Radio button styling if not checked
+                        &:not(old) + label > span
+                        {
+                            float: left;
+                            
+                            width: 14px;
+                            height: 14px;
+                            margin: 0px 15px 5px 10px;
+                            border           : none;
+                            border-radius    : 100%;
+                            background       : #ccc;
+                            vertical-align   : middle;
+                        }
+        
+                        // Radio button if checked
+                        &:not(old):checked + label > span
+                        {
+                            background: #5568FE;
+                        }
+        
+                        // Circle if option checked
+                        &:not(old):checked + label > span > span
+                        {
+                            display: block;
+                            background: #5568FE;
+                        }
+                    }
+                    .inputOpt
                     {
                         color: #555;
-                        margin: 0;
-                        padding: 0;
-                        width: 2em;
-                        font-size: 12px;
-                        opacity: 0;
-                        display: none;
-                    }
+                        border: none;
+                        border-bottom: 1px solid #D5D5D5;
     
-                    &:not(old) + label
-                    {
-                        display: block;
-                        margin: 5px 0;
-                        line-height: 14px;
-                        float: left;
-                        clear: left;
-                    }
+                        &::placeholder
+                        {
+                            color: #D5D5D5;
+                        }
     
-                    // Radio button styling if not checked
-                    &:not(old) + label > span
-                    {
-                        float: left;
-                        
-                        width: 14px;
-                        height: 14px;
-                        margin: 0px 15px 5px 10px;
-                        border           : none;
-                        border-radius    : 100%;
-                        background       : #ccc;
-                        vertical-align   : middle;
+                        &:focus{
+                            outline: none;
+                        }
                     }
-    
-                    // Radio button if checked
-                    &:not(old):checked + label > span
+                    .helpLink
                     {
-                        background: #5568FE;
-                    }
-    
-                    // Circle if option checked
-                    &:not(old):checked + label > span > span
-                    {
-                        display: block;
-                        background: #5568FE;
+                        cursor: pointer;
+                        font-size: 10px;
+                        color: #999;
+                        text-decoration: underline;
+                        text-decoration-style: dotted;
+                        &:focus
+                        {
+                            outline: none;
+                        }
                     }
                 }
-                .inputOpt
-                {
-                    color: #555;
-                    border: none;
-                    border-bottom: 1px solid #D5D5D5;
-
-                    &::placeholder
-                    {
-                        color: #D5D5D5;
-                    }
-
-                    &:focus{
-                        outline: none;
-                    }
-                }
-                .helpLink
-                {
-                    cursor: pointer;
-                    font-size: 10px;
-                    color: #999;
-                    text-decoration: underline;
-                    text-decoration-style: dotted;
-                    &:focus
-                    {
-                        outline: none;
-                    }
-                }
+    
             }
-
         }
     }
 }

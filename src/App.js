@@ -35,11 +35,6 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-      reg: state.register.register,
-      pos: state.register.registerPos,
-      nam: state.register.name,
-      ema: state.register.email,
-      lev: state.register.level,
       pID: state.register.participantID
   }
 }
