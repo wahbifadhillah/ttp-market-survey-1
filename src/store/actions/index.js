@@ -2,12 +2,14 @@ export {
     nextFormRegisterHandler,
     prevFormRegisterHandler,
     setFormRegisterValueHandler,
-    registerStore
+    registerStore,
+    participantsFetchInit
 } from './register';
 
 export {
     nextFormQuestionHandler,
     prevFormQuestionHandler,
     setAnswersQuestionHandler,
-    storeAnswer
+    storeAnswer,
+    answersFetchInit
 } from './questionnaire';

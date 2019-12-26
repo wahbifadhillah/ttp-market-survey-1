@@ -1,0 +1,216 @@
+.Admin{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    // background: yellow;
+    width: 100vw;
+    height: 100vh;
+    font-size: 16px;
+    overflow-x: hidden;
+
+    .subTitle{
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .Sidebar{
+        position: fixed;
+        background: #5568FE;
+        height: 100%;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+
+        .AppName{
+            font-size: 36px;
+            line-height: 36px;
+            color: white;
+            font-weight: 700;
+            margin: 30px;
+        }
+
+        nav{
+            ul{
+                display: flex;
+                list-style: none;
+                flex-direction: column;
+                height: 100%;
+                li{
+                    height: 100%;
+                    transition: background .25s ease;
+                    a{
+                        display: flex;
+                        padding: 15px 30px;
+                        font-size: 18px;
+                        text-decoration: none;
+                        color: white;
+                    }
+                    &:hover{
+                        background: lighten(#5568FE, 5%);
+                    }
+                }
+            }
+        }
+    }
+
+    .Content{
+        // width: 100%;
+        background: #f5f5f5;
+        height: 100%;
+        margin-left: 300px;
+        padding: 38px 30px;
+
+        .Participants{
+            display: flex; 
+            flex-direction: row;
+
+            .List{
+                margin: 0 20px 20px 0;
+                // flex: 1;
+                // background: red;
+
+                .Card{
+                    cursor: pointer;
+                    width: 400px;
+                    display: flex;
+                    align-items: center;
+                    // justify-content: space-between;
+                    padding: 10px 20px;
+                    // margin-bottom: 10px;
+                    background: white;
+                    border: 0.5px solid rgba(0, 0, 0, 0.05);
+                    box-sizing: border-box;
+                    // box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+                    // border-radius: 12px;
+                    transition: background .25s linear;
+
+                    &:hover{
+                        background: #ccc;
+                    }
+
+                    .isPlanning{
+                        text-align: center;
+                        // align-self: center;
+                        width: 40px;
+                        margin-right: 20px;
+                        // flex: 2;
+                    }
+                    .Brief{
+                        // flex: 11;
+                        .Name{
+                            font-weight: 600;
+                        }
+                        .Level{
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+            .Detail{
+                // padding: 20px;
+                height: 100%;
+                overflow-y: none;
+                margin: 0 20px 20px 0;
+                flex: 2;
+                flex-grow: 1;
+                background: white;
+                border: 0.5px solid rgba(0, 0, 0, 0.05);
+                box-sizing: border-box;
+                box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+                border-radius: 12px;
+
+                .Info{
+                    padding: 20px 20px;
+                    display: flex;
+                    flex-direction: column;
+
+                    .Row{
+                        margin-bottom: 10px;
+                        display: flex;
+
+                        .cTitle{
+                            font-weight: 600;
+                            flex: 1;
+                        }
+
+                        .cData{
+                            flex: 2;
+                        }
+                    }
+                }
+
+                .Response{
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0 20px 20px 20px;
+
+                    .Data{
+                        display: flex;
+                        border-top: 1px solid rgba(0, 0, 0, 0.05);
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                        padding: 20px 0;
+                        // margin-bottom: 20px;
+                        // background: red;
+                        // align-items: center;
+                        // flex-direction: column;
+
+                        .questionNo{
+                            // width: 100px;
+                            text-align: center;
+                            margin-right: 10px;
+                            font-weight: 600;
+                            // background: blue;
+                        }
+                        .dataContainer{
+                            display: flex;
+                            flex-direction: column;
+                            // text-align: left;
+    
+                            .Question{
+                                // flex: 2;
+                                font-weight: 600;
+                            }
+
+                            .Answer{
+                                ul{
+                                    display: flex;
+                                    list-style: none;
+                                    line-height: 16px;
+                                    height: 16px;
+                                    margin: 5px;
+                                    li{
+                                        text-align: center;
+                                        // display: flex;
+                                        // justify-content: center;
+                                        // align-items: center;
+                                        &.Priority{
+                                            width: 16px;
+                                            height: 16px;
+                                            
+                                            font-weight: 700;
+                                            margin-right: 10px;
+                                            background: #5568FE;
+                                            border-radius: 100%;
+                                            color: white;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+        h1{
+            font-size: 28px;
+            line-height: 28px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 38px;
+        }
+    }
+}

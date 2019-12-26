@@ -6,6 +6,7 @@ import monthly from '../../assets/images/monthly.svg';
 
 const initialState = {
     answers: [],
+    answerList: [],
     question: {
         0: {
             question: "Apa kamu biasa melakukan perencanaan (planning) dan menjadwalkan kegiatan sehari-hari mu?",
@@ -202,7 +203,20 @@ const prevFormQuestion = (state, action) => {
 
 const setAnswersQuestion = (state, action) => {
     return updateObject(state, {
-      answers: action.answers
+        answers: action.answers
+    })
+}
+
+const answersFetchSuccess = (state, action) => {
+    const answers = [];
+    for (let key in action.answers){
+      answers.push({
+            id: key,
+            ...action.answers[key]
+        });
+    }
+    return updateObject(state, {
+      answerList: answers
     })
   }
 
@@ -211,7 +225,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.NEXT_FORM_QUESTION: return nextFormQuestion(state, action);
         case actionTypes.PREV_FORM_QUESTION: return prevFormQuestion(state, action);
         case actionTypes.SET_QUESTION_ANSWERS: return setAnswersQuestion(state, action);
-        // case actionTypes.SET_FORM_REGISTER_VALUE: return setFormRegisterValue(state, action);
+        case actionTypes.FETCH_ANSWERS_SUCCESS: return answersFetchSuccess(state, action);
         default: return state;
     }
 }

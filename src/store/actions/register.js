@@ -39,3 +39,16 @@ export const registerStore = participant => async dispatch => {
     newRef.set(newItem);
     dispatch(setParticipantIdHandler(newItem.participantID));
 }
+
+export const participantsFetchSuccess = participants => {
+    return{
+        type: actionTypes.FETCH_PARTICIPANT_SUCCESS,
+        participants: participants
+    }
+}
+
+export const participantsFetchInit = () => async dispatch => {
+    participantsRef.on('value', snapshot => {
+        dispatch(participantsFetchSuccess(snapshot.val()));
+    })
+}

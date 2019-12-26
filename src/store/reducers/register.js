@@ -13,6 +13,7 @@ const initialState = {
     email: "",
     level: "",
     participantID: "",
+    participants: [],
     register: {
         0: {
           title: "Tuliskan\nnamamu",
@@ -79,12 +80,26 @@ const setParticipantId = (state, action) => {
   })
 }
 
+const participantsFetchSuccess = (state, action) => {
+  const participants = [];
+  for (let key in action.participants){
+    participants.push({
+          id: key,
+          ...action.participants[key]
+      });
+  }
+  return updateObject(state, {
+    participants: participants
+  })
+}
+
 const reducer = (state = initialState, action) => {
     switch (action.type){
         case actionTypes.NEXT_FORM_REGISTER: return nextFormRegister(state, action);
         case actionTypes.PREV_FORM_REGISTER: return prevFormRegister(state, action);
         case actionTypes.SET_FORM_REGISTER_VALUE: return setFormRegisterValue(state, action);
         case actionTypes.SET_PARTICIPANT_ID: return setParticipantId(state, action);
+        case actionTypes.FETCH_PARTICIPANT_SUCCESS: return participantsFetchSuccess(state, action);
         default: return state;
     }
 }
