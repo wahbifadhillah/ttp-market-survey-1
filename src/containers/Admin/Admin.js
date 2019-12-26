@@ -38,13 +38,6 @@ class Admin extends Component{
         // survey data
         const surveyData = [...this.props.als];
         const answers = surveyData.filter(data => data.participantID === id);
-        // let answers = surveyData.filter(data => data.participantID === id);
-        // if(answers.length === 0){
-        //     answers = [{
-        //         answer: ["Tidak ada"]
-        //     }];
-        // }
-        console.log(answers);
         this.setState({
             detailed: detailed,
             answers: answers
@@ -82,7 +75,7 @@ class Admin extends Component{
                     </div>
                     <div className={s.Row}>
                         <div className={s.cTitle}>Planning?</div>
-                        <div className={s.cData}>n</div>
+                        <div className={s.cData}>null</div>
                     </div>
                 </>
             );
@@ -99,12 +92,10 @@ class Admin extends Component{
                                     <>
                                         {this.state.answers[0].answer[9].answer.map(priority => {
                                             return (
-                                                <>
-                                                    <ul>
-                                                        <li className={s.Priority}>{priority[0]}</li>
-                                                        <li>{priority[1]}</li>
-                                                    </ul>
-                                                </>
+                                                <ul key={priority.key}>
+                                                    <li className={s.Priority}>{priority[0]}</li>
+                                                    <li className={s.pData}>{priority[1]}</li>
+                                                </ul>
                                             );
                                         })}
                                     </>
@@ -152,7 +143,7 @@ class Admin extends Component{
                     <nav>
                         <ul>
                             <li>
-                                <a href="/aw">Participant</a>
+                                <a className={s.active} href="/adminfasterfaster48">Participant</a>
                             </li>
                         </ul>
                     </nav>
@@ -165,7 +156,7 @@ class Admin extends Component{
                             {this.props.par.map(p => {
                                 return (
                                     <div className={s.Card} key={p.id} onClick={(id) => this.participantClickHandler(p.id)}>
-                                        <div className={s.isPlanning}>n</div>
+                                        <div className={s.isPlanning}>null</div>
                                         <div className={s.Brief}>
                                             <div className={s.Name}>{p.name}</div>
                                             <div className={s.Level}>{p.level}</div>
